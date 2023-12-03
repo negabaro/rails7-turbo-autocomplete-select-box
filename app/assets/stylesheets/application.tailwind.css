@@ -2,12 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+/* 
+.search {
+    width: 600px;
+    margin: 100px auto 0 auto;
   }
-}
-
+  
+  .search__input {
+    border: 1px solid gray;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .search__results {
+    border: 1px solid gray;
+    border-radius: 2px;
+    border-top: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    top: -1px;
+    position: relative;
+  }
+  
+  .search__result {
+    a {
+      text-decoration: none;
+      color: black;
+      padding: 10px;
+      display: block;
+    }
+  }
 */
+
+  
+  .search__result--current, .search__result:hover {
+    background: #e0e0e0;
+  }
+  
+  .search__result {
+    padding: 6px;
+  }
+
+  .person {
+    width: 600px;
+    margin: 100px auto 0 auto;
+  }
+  
+  .person__name {
+    font-size: 50px;
+  }
+  
+  .person__back_to_search_link {
+    a {
+      color: black;
+      padding: 5px;
+    }
+  }
+  

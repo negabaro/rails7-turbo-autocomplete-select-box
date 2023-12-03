@@ -1,0 +1,16 @@
+<%= search_form_for @q, url: root_path,
+    data: {
+      turbo_frame: "search_results_ptRAgvtb",
+      controller: "search-form",
+      action: "input->search-form#submit"
+    } do |f| %>
+
+
+<div class="input-group">
+  <%= f.search_field :name_cont, class: "shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md h-10", placeholder: "Search…", value: @assign_person.present? ? @assign_person.name : nil  %>
+</div>
+
+<%= turbo_frame_tag 'search_results_ptRAgvtb' do %>
+<%= render partial: 'search/results', locals: { persons: @persons } %>
+<% end %>
+<% end %>

@@ -1,0 +1,8 @@
+<li class="search__result search__result--empty flex justify-between items-center hidden">
+  <%= button_to "謎", post_assign_people_create_path, method: :post, form: {data: {turbo_frame: "search_form_tQPUuzjH"}}  %>
+</li>
+<% @persons.each do |person| %>
+<li class="search__result">
+  <%= button_to person.name, post_assign_people_update_path(person), method: :patch, form: {data: {turbo_frame: "search_form_tQPUuzjH"}}  %>
+</li>
+<% end %>

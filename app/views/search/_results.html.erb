@@ -1,0 +1,26 @@
+<div class="search mx-auto w-600 mt-100 <%= 'hidden' if @qq.blank? %>">
+  <!-- <input type="text" class="search__input border border-gray-300 rounded-sm p-2 text-base w-full box-border"
+    placeholder="Search...">-->
+
+  <ul class="search__results border border-gray-300 rounded-md border-t-0 mt-0 pt-0 list-none relative">
+    <!-- @personsのデータに基づく繰り返し処理 -->
+    <% if @persons.any? %>
+    <%= render partial: "search/persons" %>
+    <% else %>
+    <li class="search__result search__result--empty flex justify-between items-center hidden">
+      <%= button_to "謎", post_assign_people_create_path, method: :post, form: {data: {turbo_frame: "search_form_tQPUuzjH"}}  %>
+    </li>
+    <li class="search__result search__result--empty flex justify-between items-center">
+      No results
+      <%= button_to post_assign_people_create_path, method: :post, params: { new_person: @qq[:name_cont] }, form: {data: {turbo_frame: "search_form_tQPUuzjH"}}, class: "flex items-center justify-center" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+      </svg>
+      <% end %>
+    </li>
+    <% end %>
+
+
+  </ul>
+</div>
